@@ -3,35 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <link rel="stylesheet"  href="style_index.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_index.css') }}">
     <title>Weather in any city</title>
 </head>
 <body>
     <div class="wrapper">
         <nav class="bar">
-            <img class="logo" src="../static/images/logo.png">
+            <img class="logo" src="../static/icons/few clouds.png">
             <h1 id="header"> weather in any city </h1>
             <ul> 
-                <li><a class="active" href="#">Weather</a> </li>
+                <li><a class="active" href="/index">Weather</a> </li>
                 <li><a href="#">Pressure</a> </li>
                 <li><a href="#">About</a> </li>
             </ul>
         </nav>
+
         <div class="center">
             <h1> Enter city: </h1>
             <form action="{{url_for('submit')}}" method="POST" novalidate>
-             <div class="field">
-                 <input type="text" size=40 name="city" id="city"> 
-            </div>
-            <!--<h2> for example {{random_city}}</h2> -->
-            <div class="buttons">
-                 <input type="submit" value="Find" id="find" size=20>
-            </div>
-            <!--{% if comment %}
-            <br><p align="center"><b color="Red">{{comment}}</b></p>
+                <div class="field">
+                    <input type="text" size=40 name="city" id="city"> 
+                </div>
+                <!--<h2> for example {{random_city}}</h2> -->
+                <div class="buttons">
+                    <input type="submit" value="Add" id="find" size=20>
+                </div>
+                <!--{% if comment %}
+                <br><p align="center"><b color="Red">{{comment}}</b></p>
+                {%endif%}
+                -->
+           </form> 
+            {%if weather_cities%}
+            {% for weather in weather_cities %}
+            <div class="widget">
+                {%if photo_link %}
+                <img class="photo" src="photo_link">
+                {% else %}
+                <img class="photo" src="../static/images/city_basic_photo.jpg">
+                {%endif%}
+                <div class="data">
+                    <h1 align=center> 
+                        {{weather.city}} 
+                        <img src="http://openweathermap.org/img/wn/{{weather.icon}}.png" height=30 width=30s>
+                    </h1>
+                        <p  align=left>
+                        {{weather.info}}<br> 
+                        Temperature: {{weather.temperature}} &deg C<br>
+                        Wind: {{weather.wind}} m/s<br> 
+                        </p>
+                </div>
+                <div class='wbuttons'>
+                    <form action="{{url_for('widget')}}" method="POST" novalidate>
+                        <button type="submit" name="details" value={{weather.city_no_space}} id="wdetails"> details</button>
+                        <button type="submit" name="close" value={{weather.city_no_space}} id="wclose">X</button>
+                    </form>
+                </div>
+            </div>    
+            {%endfor%}
             {%endif%}
-            -->
-           </form>           
         </div>
     </div>
 </body>
