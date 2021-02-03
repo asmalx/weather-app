@@ -1,0 +1,250 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+.wrapper{
+    background: url("../static/images/background_inital1.jpg");
+    background-size: cover;
+    height:  100vh;
+    width: 100%;
+}
+.bar{
+    height: 100px;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    overflow: hidden;
+    backdrop-filter: blur(3px);
+}
+.logo{
+    float: left;
+    width: 80px;
+    height: auto;
+    padding: 5px 10px;
+
+}
+h1#header{
+    float:left;
+    margin-left: 50px;
+    margin-top: 5px;
+    font-size: 50pt;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+    font-variant: small-caps;
+    color: white;
+    word-break: break-all;
+}
+.bar ul{
+    float: right;
+    margin-right: 10px;
+
+}
+.bar ul li{
+    list-style: none;
+    margin: 0 10px;
+    line-height: 100px;
+    display: inline-block;
+}
+.bar ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20pt;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+    padding: 10px 20px;
+    border: 1px solid white;
+}
+.bar ul li a.active,
+.bar ul li a:hover{
+    background: white;
+    color: black;
+}
+
+.wrapper .center{
+    position: absolute;
+    width: 90%;
+    height: 75%;
+    top: 20%;
+    left: 5%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100; 
+    background:  rgba(0,0,0,0.6);
+    border:1px ridge rgba(0,0,0,0.7); 
+    backdrop-filter: blur(3px);
+}
+.center h1{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100; 
+    padding: 10px;
+    font-size: 20pt;
+    text-align: center;    
+}
+
+.center h2{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100; 
+    padding: 5px;
+    font-size: 10pt;
+    text-align: center;    
+}
+.center .field input#city:focus{   
+    outline: none;
+}
+.center .field input#city{
+    color: white;
+    width: 40%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100; 
+    padding: 20px;
+    border: 1px solid white;
+    background: rgba(255,255,255,0.1);
+    font-size: 20pt;
+    position: absolute;
+    right:30%
+}
+
+.center .buttons{
+    position: absolute;
+    right: 30%;
+    top: 20%;
+}
+.center .buttons input#find:focus{   
+    outline: none;
+    background: white;
+    color: black;
+}
+.center .buttons input#find{
+    color: white;
+    width: 100px;
+    height: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100; 
+    padding: 10px;
+    border: 1px solid white;
+    background: rgba(255,255,255,0.1);
+    font-size: 20pt;
+}
+
+.wrapper .center .widget{
+    text-align: right;
+    position: relative;
+    margin: 15px;
+    width: 80%;
+    height: 20%;
+    top: 20%;
+    left: 10%;
+    background: rgb(20, 20, 20, 0.8);  
+    border:2px solid rgb(35,35,35); 
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100; 
+    display: block;
+
+    color: white;   
+}
+
+.wrapper .center .widget .photo{
+    margin: 10px;
+    height: 80%;   
+    width: auto;
+    text-align: left;
+    border:1px solid rgb(35,35,35); 
+    border: 1px solid black;
+    float: left;
+}
+
+.wrapper .center .widget .data{
+    display: inline;
+    text-align: left;
+    float: left;
+    display: inline;
+
+}
+.wrapper .center .widget .wbuttons{
+    width: 70%;
+    height: 70%;
+    display: inline;
+}
+
+.wrapper .center .widget .wbuttons button#wdetails{
+    position: absolute;
+    top: 10px;
+    right: 145px;
+    width: 0px;
+    height: 0px;
+    cursor: pointer;
+    color: white;
+}
+
+
+.wrapper .center .widget .wbuttons button#wclose{
+    position: absolute;
+    top: 10px;
+    right: 10px; 
+    width: 10px;
+    height: 10px;
+    background: white;
+    cursor: pointer;
+    color: white;
+}
+.wrapper .center .widget .wbuttons button#wclose:focus{   
+    outline: none;
+    background: white;
+    color: none;
+}
+
+@media screen and (min-width: 1280px) {
+    h1#header{
+        font-size: 50pt;
+        margin-top: 5px;
+    }
+}
+@media screen and (max-width: 1280px) {
+    h1#header{
+        font-size: 40pt;
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 1150px) {
+    h1#header{
+        font-size: 30pt;
+        margin-top: 15px;
+    }
+    .center .field input#city{ 
+        width: 50%;
+        right: 20%;
+    }
+    .center .buttons{
+        right: 20%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    h1#header{
+        font-size: 25pt;
+        margin-top: 25px;
+    }
+    .bar ul li a{
+        font-size: 10pt;
+        padding: 10px 20px;
+    }
+}
+@media screen and (max-width: 800px) {
+    h1#header{
+        display:none;
+
+    }
+    .bar ul li a{
+        font-size: 10pt;
+        padding: 10px 20px;
+    }
+}
+@media screen and (max-width: 600px) {
+    h1#header{
+        display:none;
+    }
+    .bar ul li a{
+        font-size: 10pt;
+        padding: 10px 20px;
+    }
+}
